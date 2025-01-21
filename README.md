@@ -32,7 +32,22 @@ IN this repo to learn machine learning
 
 
 ## Flask Framework
-   1 - WSAI
-   2 - Jinja 2 Template Engine
+   1 - WSAI - web server gateway interface
+   2 - Jinja 2 WEB Template Engine it combine we template with data source
+
+
+   ### Basic Interface
+   from flask import Flask
+
+    '''
+   it creates an instance of the Flask class.
+   which will be your WSGI application.
+   '''
+
+    app = Flask(__name__)
+
+
+    if __name__ == '__main__':
+    app.run()
 
 
