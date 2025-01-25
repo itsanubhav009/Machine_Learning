@@ -294,5 +294,199 @@ IN this repo to learn machine learning
     X = {1 ,2 ,3 ,4 ,5 }
     mean = 3 
     sigma = 1.44 = 1
+
+
+
+
+## Uniform Distribution
+
+  ### Continuous uniform distribution  
+    Continous random variable 
+    in probability theory and statistics the continuous uniform distribution or rectangular distribution 
+
+             1/(b-a)        xE[a,b]
+    PDF =     0             otherwise
+
+
+
+
+
+    CDF = {     0         for  x<a  
+            (x-a)/(b-a)   for x E [a,b] 
+                1         for x>b
+
+
+
+
+mean = (1/2)(a+b)
+median = (1/2)(a+b)
+
+pr(x1<=X<=x2)= (x2-x1)/b-a 
+
+
+  ### Discrete Random Variable 
+   In probability theory and statistics the discrete uniform distribution is a symmetric probability distribution where in a finite number of values are equally likely to be observed ; every one of n values has equal probability 1/n.Another way of saying "discrete uniform distribution" would be a known ,finite number of outcomes equally likely to happen 
+   
+   PMF = 1/n
+
+   mean = (a+b)/2
+
+
+## Log Normal Distribution
+(Right skewed distribution)
+IN probabilty theory , a log normal distribution is a continous distribution of a random variable whoos logarithm is normally distributed .thus if the random variable X is log normally distributed ,then Y = ln(X) has a normal distribution .Equivalently , if Y has a normal distribution , then the exponential function of Y,X  = exp(Y) , has a log-normal distribution
+
+
+X = lognormaldistribution(MEAN , standarddeviation)
+y = ln(X) = normal distribution QQplot
+x = exp(Y) => Log normally distributed 
+
+mean is constant but  standard deviation is changing
+
+
+## Power law distribution (80-20% rule)
+
+IN statistics a power law is a functional relationship between two quantities ,where a relative change in one quantity results in a proportional relative change in the other quatity , independent of the intial size of those quantities one quantity varies as a power of another.
+
+
+
+## Pareto Distribution(80-20% rule)
+
+  BOx -Cox Transformation to conver pareto distribution in normal distribution
+
+
+## Central Limit Theorem 
+the central limit theorem reliies on the concept of a struggling distribution which is the probability distribution of a statistic for a large number of samples taken from a 
+Population
+
+THe central limit theorem says that the sampling distribution of the mean will always be normally distribution , as long as the sample lsize is large enough . Regardless of weather the population has a normal , poisson  , binomial , or an other distribution  ,the sampling distribution of the mean will be normal.
+
+
+Mean of sampled data is same as older one
+satndard deviation will be = sigma/(n)^(1/2)
+
+
+
+
+# Infrential Statistics - to come up with conclusiona and infrences
+## Estimates 
+   Is specified observed numerical value used to estimate and unknown population paramenter
+
+
+   1 - Point Estimate : Single numerical value used to estimate an unknown population parameter .
+   eg - sample mean is a point estimate of population mean 
+   2 - Interval Estimate : Range of values is used to estimate unknown population parameter. (confidence interval )
+
+## A Hypothesis and hypothesis testing mechanism 
+   Hypothesis Testing Mechanism 
+   1 - Null Hypothesis(H0) 
+     the assumption you are begning with
+   2 - Alternate Hypothesis (H1)
+     Opposite of null hypothesis
+   3 - Experiments  -> Statistical Analysis
+  4 Accept the Null Hypothesis
+
+
+  ### P value 
+  the p value is a number , calculated from a statistical test , that describe how likely you are to have found a particular set of observation if the null hypothesis were true ,P hypothesis testing to help decide whether to reject the null hypothesis.
+  
+  ### Significance value
+      p< significance value reject the null hypothesis
     
 
+    1 - Z test -> average  
+    2 - T test -> average 
+    3 - CHI square -> statistacal analysis for categorical data
+    4 - Annova ->  variance
+
+
+
+### Student t distribution
+ In z stats when we perform any analysis using z -score 
+
+ HOw do we perform any analysis when we do not know the population deviation  = > use student t distribution 
+
+ t = x -mean /s/(n)^(1/2)    t table
+
+ z score means how much it is away from the table 
+### Degree of freedom 
+  dof = n-1 
+  
+
+### T- stats :- 
+ 
+
+
+ ## Baye's Theorem 
+  Probability -> 
+  Independent Events - one event does not effect other
+  dependent events - Pr(R and Y) = P(R) * {p(y/r)} => conditional probability of r give y
+
+  p(b/a) = (p(b)*p(a/b))/p(a)
+
+  A,B = events
+  p(A/B) = Probability of a given b is ture (already occurred)
+  p(A) , p(B) = Independent Probability of A and B
+
+
+  ## Confidence Interval and margin of error (Explore)
+
+
+  ## Chi Square Test 
+  the chi square test for goodness of fit test claims about population proportions
+  it is a non parametric test that is performed on categories [ordinal and nominal] data.
+  * Goodness of fit test  
+
+  ## ANOVA(Analysis of variance):
+  Annova is a statistical method used to compare the means of 2 or more groups.
+
+  ANOVA : 
+  1: Factors (variable) :
+  2: Levels 
+  Mode of payment
+
+
+### Anova Assumptions
+Assumtions in Anova
+
+1 - Normalizing of sampling distribution of mean
+ the distribution of sample mean is normally distributed
+2 - Absence of Outliers
+ Outlying score need to be removed from the dataset
+ 3 - Homogenity of variance
+ Population variance in different levels of each independent variable are equal
+ 4 - Samples are independent and random selected
+
+Types of ANOVA : 
+1-One way ANOVA : One factor with atleast 2 levels these levels are independent
+
+2 - Repeated Measures Annova :- One factor with atleast 2 levels ,levels are dependent 
+
+3 - Factorial Anova : - Two or more factors (each of which with atleast ) 2 levels ,levels can be independent and dependent.
+
+
+
+
+Hypothesis Testing In Annova(Partioning of variance in the annova)
+NULL Hypothesis 
+mean1 = mean2 = mean3 = .... mean k
+Alternate Hypothesis H1 : Atleast One of the sample mean is not equal
+
+Test Statistic : F = Variance Between Samples / Variance Within Samples 
+variance between samples  
+
+ If f is greater than critical value then we reject the null hypothesis
+ Degree of freedom within - a-1
+  Degree of freedom Between - N- a (no.of diffrent level)
+   Degree of freedom total - N-1
+
+
+1: SS between = { ({ai)^2/n - T^2/N 
+2: SS within = {y^2 - {({ai)^2 / n
+3: SS Total  = 
+
+           SS     df     MS  = SS/df   F
+
+Between
+Within
+Total     108.6
