@@ -490,3 +490,11 @@ variance between samples
 Between
 Within
 Total     108.6
+
+
+
+## EDA help to understand the data(EDA basic file )
+
+
+
+
