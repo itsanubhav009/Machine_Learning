@@ -493,8 +493,468 @@ Total     108.6
 
 
 
-## EDA help to understand the data(EDA basic file )
+## EDA help to understand the data(EDA basic file ):
+00
+
+## Machine Learning 
+It provide stats troll to analyze , visualize , prediction , forecasting the data.
+                  |----- Regression Continous
+1 - Supervised Ml |
+        |         |----- Classification (Continous)
+        |
+        |
+        |------------- 1 Dependent 
+        |              2 Continuous - Regression 
+        |              3 Categorical
+        |
+        |
+        |
+        |
+        |
+        |--------------1 Linear Regression
+                       2 Ridge & Lasso
+                       3 Elastic Net
+                       4 Logistic Regression
+                       5 ADA Boost
+                       6 Xgboost
+                       7
+                       8
 
 
+
+
+
+
+
+2 - Unsupervised ML  - We make clusters
+
+Salary      Spending Score 
+
+
+
+
+
+
+3 - Reinforcement Learning 
+
+
+lINE eQUATION - w^Tx + C =0 
+
+
+n -Dimension PLane - w^Tx + C =0
+
+Equation passing through the origin - w^Tx = 0
+
+* W is perpendicular to the plane 
+* Distance of a point from plane
+W^Tx = 0
+
+d = w^T.S / ||W||
+
+W^T.s = ||W||. ||S|| .cos theta
+
+
+
+
+## Instance based learning vs Model Based Learning 
+
+
+Instance Band  -  - - - - > Dependendent on data
+              --------------> K nearest Neighbour
+                 -----------> Learn Pattern of the data
+
+MOdel Based Technique  -----> Pattern between the data
+                       ------> Gernaliztion Method
+
+
+
+
+
+# ML Algorithm
+## Simple Linear Regresssion 
+We crate a best fit line such that the sum of distance between the data point is minimum .
+ 
+ 
+hQ(x) = Qo + Q1x;
+Q0 = Intercept
+
+if x = 0 
+hQ(x) = Qo 
+Q1 = slope or coefficient
+^
+y ---> Predicted Point ----> ho(x)
+           ^ 
+Error (y - y)  ---> difference between old point and new point is error
+
+
+
+** We change the best fit line based on error by changing values of intercept and slope
+
+
+### Cost Function 
+                    m  Predicted     True
+J(Qo , Q1) = (1/2m) {(hQ(x)^(i)  -   y(i))^2
+                    i =1
+
+
+
+#### FInal Aim what we need to solve
+
+MInimize J(Qo ,Q1) 
+
+
+
+calculate the cost function and then plot it then it get global minima
+
+### Convergence Algorithm
+COnvergence Algorithm {Optimize the changes of Q1 value }
+
+Repeat Until Convergence
+{
+  Qj = Qj - alpha dJ(Qj)/D(Qj)
+}
+
+
+We calculate the slope and find the global minima
+1 - Derivative = Slope 
+2- then check weather it is a negative slope or positive slope 4
+
+
+
+
+Ex - 
+if slope is negative
+then we add something in Qj to get global minima for a case  
+else 
+we have to substract
+
+
+
+ 
+#### Alpha -- > Leanring Rate (Controlls the speed to converge the value) ( Howm slow or fast the convergence will happen)
+
+
+####  Gradient Descent  | --- Q0 = 0 
+                        | --- Q1 = Changeable
+                        |
+                        |
+                        
+
+
+Repeat until COnvergence 
+{
+  Q0 : = Q0 - (alpha)(1/m){(hQ(x))
+  
+
+}
+
+
+
+
+
+
+### Multiple linear Regression
+
+more number of co-efficient there
+
+###  Performance Metrics usd in Linear Regression
+
+
+1 - R squared  = 1 - SSRes / SSTotal 
+
+
+
+
+ =  1 - small number /bigger number
+
+ more the value of R squared is toward 1 more accurate the data
+
+
+2 - Adjusted R squared -   1- ( ((1-R^2)(N-1))/(N-P-1))
+
+    N = No. of data points 
+    P = No . of Independent Features
+
+
+    it gives the exact value without the independent of Adjusted R squared.
+
+    if r adjusted value is less then the actual r squared value then there is some value which is not co related 
+    and if incearses then all are co-related
+
+More the features you will add more Rsquared value will increase
+
+
+
+3 - Mean Squared Error 
+        n    ^
+    --> { (y-y) /n
+        i =1
+
+
+        Advantage - 
+        1 - Differentiable 
+        2 - It has one local and global minima
+        3 - Converges Faster
+
+        Disadvantage - 
+        1 - Robust TO outiliers
+        2 - NO longer in the same unit
+
+4 - Mean absolute Error (MAE)
+    --> 
+          n    ^
+       (1/n){ |y-y|
+          i= 1
+
+     Advantage -
+     1 - Robust TO outiliers
+     2 - It will  in the same unit
+
+     Disadvantage - 
+     1 - It will take more time to converge
+     2 - It will time consuming.
+     
+
+5 - Root Mean squared Error
+    --> 
+
+    RMSE = (MSE)^1/2
+
+    Advantage -
+    1 -Same UNit
+    2 -DIfferent Table
+
+
+    Disadvantage 
+    1 -Robust to Outliers
+
+
+### Overfitting / Underfitting
+Bias and Variance 
+
+Training Dataset ----> MOdel to train
+                |
+                |- Train - 
+                |- Validation - Hyper parameter Tunning your 
+                   Model.
+
+#### Our Aim
+
+TRAIN Very GOOD ACCURACY  [low bias]
+Test very good accuracy[low variance]
+
+
+#### Overfitting --> 
+                     very good accuracy [Low Bias] 
+                     bad accuracy      [HIgh varaince]
+
+#### Underfitting --> 
+                   MOdel accuracy is low [High Bias]
+                   MOdel  accuracy is acuuracy  [ high  variance]
+                   model is underfitting []
+
+Test Dataset     ----> FOr test
+
+
+### Linear Regression Using OLS {Ordinary Least Square}
+
+OLS  - > Formula and calculate beta0 and beta 1
+hq(x)  = Beta0 + Beta1x1
+
+
+#### Ordinary Least Square
+  ______________________
+                          n
+  S(Beta0 , Beta1) = (1/n){(yi-Beta0 - beta1x1)^2
+                          1
+                                          n
+  differentiate w.r.t (beta0 , beta1) = ()({(yi - beta0 - 
+                                          i =1  beta1x1)(0-1-1))
+
+
+
+           n       _          _
+   Beta1 = { (yi - y) / (Xi - X)  ---> COEFFICIENT
+           i
+           _        _  
+   Beta0 = Y - Beta1X   Intercept
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Deep Learning
+Multi Layered + Neural Network
 
 
